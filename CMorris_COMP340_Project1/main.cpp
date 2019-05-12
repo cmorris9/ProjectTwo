@@ -58,7 +58,7 @@ int main() {
 	Item* spear = new Item("spear");
 	spear->ChangeWeapModifier(7);
 	Item* dagger = new Item("dagger");
-	dagger->ChangeWeapModifier(20);
+	dagger->ChangeWeapModifier(2);
 	Item* bible = new Item("bible");
 	bible->ChangeWeapModifier(0);
 	Item* rock = new Item("rock");
