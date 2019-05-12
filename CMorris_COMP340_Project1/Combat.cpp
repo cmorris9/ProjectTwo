@@ -23,6 +23,7 @@ Combat::~Combat()
 
 void Combat::CombatCheck(Room* currentRoom, std::string userInput)
 {
+	//Check if room enemy list is greater than 0, if so engage combat
 	std::vector<GameCharacter*> TestList = currentRoom->getRoomEnemies();
 	if (TestList.size() > 0)
 		StartFight(currentRoom, userInput);
@@ -31,6 +32,7 @@ void Combat::CombatCheck(Room* currentRoom, std::string userInput)
 
 void Combat::StartFight(Room* currentRoom, std::string userInput)
 {
+	//engaging in combat with enemy
 	std::string userInput1 = "";
 	std::cout << "AN enemy " + currentRoom->RoomEnemies[0]->GetName();
 	std::cout << " Jumps out at you!!!!!!!!!!!!!!!\n";
@@ -51,7 +53,6 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 			Commands.push_back(word);
 		}
 		
-
 		if (Commands.size() > 1 && Commands[1] == "item")
 		{
 			std::string userInput2 = "";
@@ -75,6 +76,7 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 		}
 		else if (Commands.size() > 1 && Commands[1] == "hands")
 		{
+			//simple hand combat will only remove constant damage each time
 			std::cout << "With your bare hands you begin to pummel the enemy ";
 			std::cout << " dealing out " + std::to_string(2);
 			std::cout << " damage!!!\n";
@@ -84,6 +86,8 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 		}
 		else if (Commands.size() > 1 && Commands[1] == "dash")
 		{
+			//will disengage the enemy and leave the player standing in the same room, if they do not leave immediatly
+			//they will be engaged again in combat with the same enemy
 			std::cout << "You run!\n";
 			std::cout << " \n";
 			break;
@@ -94,6 +98,7 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 			
 		if (Commands.size() > 1 && EnemyHP > 0)
 		{
+			//If enemy health isnt 0 at his turn, then he will deal damage
 			std::cout << "Still standing the " << EnemyList[0]->GetName();
 			std::cout << "slashes back at you and deals " + std::to_string(EnemyList[0]->AttckDmg);
 			std::cout << " damage!\n";
@@ -103,6 +108,8 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 		}
 		else if (Commands.size() > 1 && EnemyHP < 1)
 		{
+			//Could use an adjustment, but this just checks to make sure the slain enemy is not the boss, boss gets different
+			//cinematic death which can be altered here, currently Red Dragon is this maps boss
 			if (currentRoom->RoomEnemies[0]->GetName() != "Red Dragon")
 			{
 				std::cout << "You have slain the enemy!!\n";

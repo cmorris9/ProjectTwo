@@ -171,6 +171,25 @@ void User::PlayerMenu(Room* currentRoom, std::string userInput)
 			{
 				std::cout << " \n ";
 				DisplaySatchelContents();
+
+				std::cout << "\nSelect Item from your satchel or type 'close'\n";
+				std::getline(std::cin, userInput2);
+
+				int ItemIndex = RetreiveFromSatchel(userInput2);
+
+				if (ItemIndex < 0)
+				{
+					std::cout << "You cannot find this item anywhere!\n";
+					break;
+				}
+				else
+				{
+					Item* CurrentItem = this->getSatchelItem(ItemIndex);
+					std::cout << "From your satchel you retreive a " + CurrentItem;
+
+				}
+
+
 			}
 			else if (Commands[0] == "QUIT")
 				break;
