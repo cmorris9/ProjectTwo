@@ -6,10 +6,11 @@
 
 
 
-User::User(std::string Name, int HitPoints, std::vector<Item*> PlayerSatchel) : GameCharacter(Name, HitPoints)
+User::User(std::string Name, int HitPoints, std::vector<Item*> PlayerSatchel, std::vector<Item*> Spellbook;) : GameCharacter(Name, HitPoints)
 {
 	this->PlayerSatchel = PlayerSatchel;
 	this->HitPoints = HitPoints;
+	this->Spellbook = SpellBook;
 }
 
 
@@ -28,6 +29,47 @@ void User::Take(Item* RoomItem)
 
 }
 
+void User::GenerateSpells(Item* spells) //auto generates spells once spellbook is added to satchel.
+{
+	this->Spellbook.push_back(Fireball);
+	this->Spellbook.push_back(Frostbolt);
+	this->Spellbook.push_back(Lightning);
+
+}
+
+void User::DisplaySpellbook()
+{
+	int x = 0;
+	
+		for (Item* s : Spellbook)
+		{
+			std::cout << "Spell #: " << x << s->getItemName() << std::endl;
+			x += 1;
+		}
+	
+}
+
+int User::RetrieveSpell(std::string Spell)
+{
+	int x = 0;
+
+	for (Item* s : Spellbook) {
+
+		if (s->getItemName() == Items)
+		{
+
+			return x;
+
+		}
+		x = x + 1;
+	}
+	return -1;
+}
+
+Item* User::getSpell(int Spellindex)
+{
+	return this->Spellbook[Spellindex];
+}
 
 
 void User::SearchRoom(Room* CurrentRoom, std::string FurnItemToSearch)

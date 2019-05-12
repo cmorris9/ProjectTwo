@@ -65,13 +65,35 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 				break;
 			}
 			Item* CurrentItem = PlayerOne->getSatchelItem(ItemIndex);
-			std::cout << "You deal a devastating blow with the ";
-			std::cout << CurrentItem->getItemName();
-			std::cout << " dealing out " + std::to_string(CurrentItem->WeapModifier);
-			std::cout << " damage!!!\n";
-			EnemyHP = EnemyHP - (CurrentItem->WeapModifier);
-			std::cout << "Rem. HP: " + std::to_string(EnemyHP);
-			std::cout << " \n";
+			if (CurrentItem == spellbook)
+			{
+				PlayerOne->GenerateSpells();
+				std::cout << " You use the spellbook!\n"
+				std::cout << "Which spell would you like to use?\n "
+				std::getline(std::cin, userInput2);
+
+				int SpellIndex = PlayerOne->RetrieveSpell(userInput2);
+				Item* SelectedSpell = PlayerOne->getSpell(SpellIndex);
+
+				std::cout << "You begin to cast ";
+				std::cout << SelectedSpell->getItemName();
+				std::cout << " dealing out " + std::to_string(SelectedSpell->WeapModifier);
+				std::cout << " damage!!!\n";
+				EnemyHP = EnemyHP - (SelectedSpell->WeapModifier);
+				std::cout << "Rem. HP: " + std::to_string(EnemyHP);
+				std::cout << " \n";
+			}
+			else
+			{
+				std::cout << "You deal a devastating blow with the ";
+				std::cout << CurrentItem->getItemName();
+				std::cout << " dealing out " + std::to_string(CurrentItem->WeapModifier);
+				std::cout << " damage!!!\n";
+				EnemyHP = EnemyHP - (CurrentItem->WeapModifier);
+				std::cout << "Rem. HP: " + std::to_string(EnemyHP);
+				std::cout << " \n";
+			}
+			
 		}
 		else if (Commands.size() > 1 && Commands[1] == "hands")
 		{
@@ -89,6 +111,7 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 			break;
 
 		}
+		else if (Commands.size() > 1 && Commands[1] == "spellbook")
 		else
 			continue;
 			

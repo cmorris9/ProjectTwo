@@ -67,6 +67,16 @@ int main() {
 	goldCoins->ChangeWeapModifier(0);
 	Item* BattleAxe = new Item("BattleAxe");
 	BattleAxe->ChangeWeapModifier(10);
+	//adding in spellbook items & spells (BL 05/12)
+	Item* spellbook = new Item("SpellBook"); 
+	spellbook->ChangeWeapModifier(0);
+	Item* Fireball = new Item("fireball");
+	Fireball->ChangeWeapModifier(6);
+	Item* Frostbolt = new Item("frostbolt");
+	Frostbolt->ChangeWeapModifier(6);
+	Item* Lightning = new Item("lightning");
+	Lightning->ChangeWeapModifier(10);
+
 
 	//creating some of our enemy objects to put in the room
 	BullyWug* Bully = new BullyWug("BullyWug", 10);
@@ -105,6 +115,7 @@ int main() {
 	//place the items in the furniture
 	rooms[0]->setItemsInFurn(dagger);
 	rooms[1]->setItemsInFurn(spear);
+	rooms[1]->setItemsInFurn(spellbook); //BL (05/12)
 	rooms[2]->setItemsInFurn(bible);
 	rooms[2]->setItemsInFurn(rock);
 	rooms[3]->setItemsInFurn(BattleAxe);
