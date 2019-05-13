@@ -77,6 +77,14 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 				std::cout << "Rem. HP: " + std::to_string(EnemyHP);
 				std::cout << " \n";
 			}
+			else if (CurrentItem->getItemName() == "bible") {
+				std::cout << " You use the bible!\n";
+				PlayerOne->HitPoints += 10;
+				if (PlayerOne->HitPoints > 50) {
+					PlayerOne->HitPoints = 50;
+				}
+				std::cout << " You've regained 10 hitpoints!\n";
+			}
 			else
 			{
 				std::cout << "You deal a devastating blow with the ";

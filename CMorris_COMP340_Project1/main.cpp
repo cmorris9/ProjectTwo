@@ -32,7 +32,7 @@ int main() {
 	std::string userInput2 = "";
 
 	//room description design
-	rooms.push_back(new Room(" The room reeks of fire and burnt flesh. Bones and debris litter the floor and only a single chair sit in front of you.\n Two large damaged doors sit closed to your east and west. "));
+	rooms.push_back(new Room("The room reeks of fire and burnt flesh. Bones and debris litter the floor and only a single chair sit in front of you.\n Two large damaged doors sit closed to your east and west. "));
 	rooms.push_back(new Room("Opening the door a giant low, oblong pile of rubble lie near the center of this small room.\n You notice a shiny object underneath the top surface. The pile resembles cairns used to bury dead adventurers. Doors sit to the south and west. "));
 	rooms.push_back(new Room("The east door to this room swings open easily on well-oiled hinges. Beyond it you see that the chamber walls have been disguised by wood paneling.\n A torn, well stuffed seat lay in the south corner of the room along with a small table in front. A hallway enterance can be seen to the south "));
 	rooms.push_back(new Room("You open the south door to a torture chamber. Several devices of degradation, pain, and death stand about the room,\n all of them showing signs of regular use. The wood of the rack is worn smooth by struggling bodies,\n and the iron maiden appears to be occupied by a corpse. An open bookcase exposes a doorway to the west "));
@@ -121,10 +121,7 @@ int main() {
 	rooms[0]->setRoomFurniture(chair);
 	rooms[1]->setRoomFurniture(pile);
 	rooms[2]->setRoomFurniture(seat);
-	rooms[2]->setRoomFurniture(table);
 	rooms[3]->setRoomFurniture(devices);
-	rooms[3]->setRoomFurniture(corpse);
-	rooms[3]->setRoomFurniture(bookcase);
 	rooms[4]->setRoomFurniture(chest);
 	rooms[6]->setRoomFurniture(grating);
 	rooms[7]->setRoomFurniture(webs);
@@ -171,7 +168,7 @@ int main() {
 	std::cout << "As you approach the dark abandoned castle, the smell of whisky and frogs scortches your nostrils\n";
 	std::cout << "With only a empty satchel on your back, you pry open the front door and enter the first room\n\n";
 
-	currentRoom = rooms[3]; //starting point
+	currentRoom = rooms[0]; //starting point
 
 	//This holds the event loop which prompts the user with the action menu
 	PlayerOne->PlayerMenu(currentRoom, userInput);
