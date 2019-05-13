@@ -111,7 +111,6 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 			break;
 
 		}
-		else if (Commands.size() > 1 && Commands[1] == "spellbook")
 		else
 			continue;
 			
