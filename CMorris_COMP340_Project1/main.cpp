@@ -14,8 +14,9 @@
 
 int main() {
 	std::vector<Item*> Satchel;
+	std::vector<Item*> Spellbook;
 
-	User* PlayerOne = new User("PlayerOne", 40, Satchel);
+	User* PlayerOne = new User("PlayerOne", 40, Satchel, Spellbook);
 	std::vector<Room*> rooms;
 	std::vector<Item*> Items;
 	Room* currentRoom = nullptr;
@@ -77,6 +78,9 @@ int main() {
 	Item* Lightning = new Item("lightning");
 	Lightning->ChangeWeapModifier(10);
 
+	PlayerOne->GenerateSpells(Fireball);
+	PlayerOne->GenerateSpells(Frostbolt);
+	PlayerOne->GenerateSpells(Lightning);
 
 	//creating some of our enemy objects to put in the room
 	BullyWug* Bully = new BullyWug("BullyWug", 10);

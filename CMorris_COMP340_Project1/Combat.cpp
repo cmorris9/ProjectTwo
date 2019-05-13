@@ -65,11 +65,11 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 				break;
 			}
 			Item* CurrentItem = PlayerOne->getSatchelItem(ItemIndex);
-			if (CurrentItem == spellbook)
+			if (CurrentItem->getItemName() == "spellbook")
 			{
-				PlayerOne->GenerateSpells();
-				std::cout << " You use the spellbook!\n"
-				std::cout << "Which spell would you like to use?\n "
+				
+				std::cout << " You use the spellbook!\n";
+					std::cout << "Which spell would you like to use?\n ";
 				std::getline(std::cin, userInput2);
 
 				int SpellIndex = PlayerOne->RetrieveSpell(userInput2);
@@ -97,12 +97,38 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 		}
 		else if (Commands.size() > 1 && Commands[1] == "hands")
 		{
-			std::cout << "With your bare hands you begin to pummel the enemy ";
-			std::cout << " dealing out " + std::to_string(2);
-			std::cout << " damage!!!\n";
-			EnemyHP = EnemyHP - 2;
-			std::cout << "Rem. HP: " + std::to_string(EnemyHP);
-			std::cout << " \n";
+			std::string userInput3 = "";
+			std::cout << "you selected hands!\n";
+			std::cout << "Which attack would you like to do? \n";
+			std::getline(std::cin, userInput3);
+
+			if (userInput3 == "punch")
+			{
+				std::cout << "You throw out a lightning fast punch  ";
+				std::cout << " dealing out " + std::to_string(2);
+				std::cout << " damage!!!\n";
+				EnemyHP = EnemyHP - 2;
+				std::cout << "Rem. HP: " + std::to_string(EnemyHP);
+				std::cout << " \n";
+			}
+			else if (userInput3 == "uppercut")
+			{
+				std::cout << "you throw a vicious uppercut ";
+				std::cout << " dealing out " + std::to_string(3);
+				std::cout << " damage!!!\n";
+				EnemyHP = EnemyHP - 2;
+				std::cout << "Rem. HP: " + std::to_string(EnemyHP);
+				std::cout << " \n";
+			}
+			else
+			{
+				std::cout << "you begin to pummel the enemy with your bare hands ";
+				std::cout << " dealing out " + std::to_string(4);
+				std::cout << " damage!!!\n";
+				EnemyHP = EnemyHP - 2;
+				std::cout << "Rem. HP: " + std::to_string(EnemyHP);
+				std::cout << " \n";
+			}
 		}
 		else if (Commands.size() > 1 && Commands[1] == "dash")
 		{

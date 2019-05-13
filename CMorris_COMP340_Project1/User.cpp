@@ -6,11 +6,11 @@
 
 
 
-User::User(std::string Name, int HitPoints, std::vector<Item*> PlayerSatchel, std::vector<Item*> Spellbook;) : GameCharacter(Name, HitPoints)
+User::User(std::string Name, int HitPoints, std::vector<Item*> PlayerSatchel, std::vector<Item*> Spellbook) : GameCharacter(Name, HitPoints)
 {
 	this->PlayerSatchel = PlayerSatchel;
 	this->HitPoints = HitPoints;
-	this->Spellbook = SpellBook;
+	this->Spellbook = Spellbook;
 }
 
 
@@ -31,9 +31,8 @@ void User::Take(Item* RoomItem)
 
 void User::GenerateSpells(Item* spells) //auto generates spells once spellbook is added to satchel.
 {
-	this->Spellbook.push_back(Fireball);
-	this->Spellbook.push_back(Frostbolt);
-	this->Spellbook.push_back(Lightning);
+	this->Spellbook.push_back(spells);
+	
 
 }
 
@@ -55,7 +54,7 @@ int User::RetrieveSpell(std::string Spell)
 
 	for (Item* s : Spellbook) {
 
-		if (s->getItemName() == Items)
+		if (s->getItemName() == Spell)
 		{
 
 			return x;
