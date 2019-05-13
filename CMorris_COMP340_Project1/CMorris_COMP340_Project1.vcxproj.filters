@@ -48,6 +48,30 @@
     <ClInclude Include="Dragon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BugBearMage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BullyWugMage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Giant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GiantRaider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GiantCheiftan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dwarf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DwarfCheiftan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DwarfMage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Room.cpp">
@@ -84,6 +108,30 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Dragon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BugBearMage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BullyWugMage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Giant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GiantRaider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GiantCheiftan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dwarf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DwarfCheiftan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DwarfMage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

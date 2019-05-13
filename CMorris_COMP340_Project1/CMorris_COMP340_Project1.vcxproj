@@ -116,26 +116,42 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BugBear.h" />
+    <ClInclude Include="BugBearMage.h" />
     <ClInclude Include="BugBearRaider.h" />
     <ClInclude Include="BullwugCheiftan.h" />
     <ClInclude Include="BullyWug.h" />
+    <ClInclude Include="BullyWugMage.h" />
     <ClInclude Include="Combat.h" />
     <ClInclude Include="Dragon.h" />
+    <ClInclude Include="Dwarf.h" />
+    <ClInclude Include="DwarfCheiftan.h" />
+    <ClInclude Include="DwarfMage.h" />
     <ClInclude Include="Furniture.h" />
     <ClInclude Include="GameCharacter.h" />
+    <ClInclude Include="Giant.h" />
+    <ClInclude Include="GiantCheiftan.h" />
+    <ClInclude Include="GiantRaider.h" />
     <ClInclude Include="Items.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BugBear.cpp" />
+    <ClCompile Include="BugBearMage.cpp" />
     <ClCompile Include="BugBearRaider.cpp" />
     <ClCompile Include="BullwugCheiftan.cpp" />
     <ClCompile Include="BullyWug.cpp" />
+    <ClCompile Include="BullyWugMage.cpp" />
     <ClCompile Include="Combat.cpp" />
     <ClCompile Include="Dragon.cpp" />
+    <ClCompile Include="Dwarf.cpp" />
+    <ClCompile Include="DwarfCheiftan.cpp" />
+    <ClCompile Include="DwarfMage.cpp" />
     <ClCompile Include="Furniture.cpp" />
     <ClCompile Include="GameCharacter.cpp" />
+    <ClCompile Include="Giant.cpp" />
+    <ClCompile Include="GiantCheiftan.cpp" />
+    <ClCompile Include="GiantRaider.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Room.cpp" />

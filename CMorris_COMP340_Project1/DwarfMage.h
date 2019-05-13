@@ -1,12 +1,12 @@
 #pragma once
 #include "GameCharacter.h"
 
-class BugBear : public GameCharacter
+class DwarfMage : public GameCharacter
 {
 private:
 	std::string Name;
 public:
-	BugBear(std::string Name, int HitPoints);
-	~BugBear();
+	DwarfMage(std::string Name, int HitPoints);
+	~DwarfMage();
 	void SubtractDamage(int x);
 };

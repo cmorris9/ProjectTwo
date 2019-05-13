@@ -7,8 +7,16 @@
 #include "Items.h"
 #include "BullyWug.h"
 #include "BullwugCheiftan.h"
+#include "BullyWugMage.h"
 #include "BugBear.h"
 #include "BugBearRaider.h"
+#include "BugBearMage.h"
+#include "Giant.h"
+#include "GiantCheiftan.h"
+#include "GiantRaider.h"
+#include "Dwarf.h"
+#include "DwarfCheiftan.h"
+#include "DwarfMage.h"
 #include "User.h"
 #include "Dragon.h"
 
@@ -36,7 +44,6 @@ int main() {
 	rooms.push_back(new Room("You poke your head through a monsterous oak door, and look upon a room of titanic size. It is clearly an enormous mausoleum built to the proportions of giants.\n Huge niches are set into the walls within which you can discern giant bones.\n Stern-looking statues of stone giants stand 20 feet tall against the walls, and in the center of the room lies a 15-foot-long sarcophagus.  "));
 
 
-
 	//Creating all the furniture objects that will hold item vectors
 	Furniture* chair = new Furniture("chair");
 	Furniture* table = new Furniture("table");
@@ -48,9 +55,6 @@ int main() {
 	Furniture* chest = new Furniture("chest");
 	Furniture* grating = new Furniture("grating");
 	Furniture* webs = new Furniture("webs");
-
-
-
 
 
 	//creataing the items that will be hidden in the furniture objects
@@ -83,11 +87,20 @@ int main() {
 	PlayerOne->GenerateSpells(Lightning);
 
 	//creating some of our enemy objects to put in the room
-	BullyWug* Bully = new BullyWug("BullyWug", 10);
-	BullyWugCheiftan* BullywugCheiftan = new BullyWugCheiftan("BullyWug Cheif", 18);
-	BugBearRaider* BugRaider = new BugBearRaider("BugBear Raider", 25);
-	BugBear* Bug = new BugBear("BugBear", 15);
-	Dragon* RedDragon = new Dragon("Red Dragon", 35);
+	BullyWug* Bully = new BullyWug("BullyWug", 14);
+	BullyWugCheiftan* BullywugCheiftan = new BullyWugCheiftan("BullyWug Cheif", 16);
+	BullyWugMage* BullyMage = new BullyWugMage("BullyWug Mage", 12);
+	BugBear* Bug = new BugBear("BugBear", 14);
+	BugBearRaider* BugRaider = new BugBearRaider("BugBear Raider", 16);
+	BugBearMage* BugMage = new BugBearMage("BugBear Mage", 12);
+	Giant* aGiant = new Giant("Giant", 16);
+	GiantCheiftan* aGiantCheiftan = new GiantCheiftan("Giant Cheiftan", 18);
+	GiantRaider* aGiantRaider = new GiantRaider("Giant Raider", 14);
+	Dwarf* aDwarf = new Dwarf("Dwarf", 12);
+	DwarfCheiftan* aDwarfCheiftan = new DwarfCheiftan("Dwarf Cheiftan", 14);
+	DwarfMage* aDwarfMage = new DwarfMage("Dwarf Mage", 10);
+
+	Dragon* RedDragon = new Dragon("Red Dragon", 30);
 
 
 	//designing the map, and setting up the rooms
@@ -130,29 +143,25 @@ int main() {
 	rooms[7]->setItemsInFurn(BattleAxe);
 
 	//set the enemies in the rooms
-	rooms[3]->setRoomEnemies(Bug);
+	rooms[1]->setRoomEnemies(Bug);
 	rooms[2]->setRoomEnemies(Bully);
-	rooms[5]->setRoomEnemies(BugRaider);
-	rooms[6]->setRoomEnemies(Bug);
-	rooms[8]->setRoomEnemies(BullywugCheiftan);
+	rooms[3]->setRoomEnemies(BugRaider);
+	rooms[4]->setRoomEnemies(BullywugCheiftan);
+	rooms[5]->setRoomEnemies(aGiant);
+	rooms[6]->setRoomEnemies(aGiantCheiftan);
+	rooms[7]->setRoomEnemies(aDwarf);
+	rooms[8]->setRoomEnemies(aDwarfMage);
 	rooms[9]->setRoomEnemies(RedDragon);
-
-
-
 
 
 	std::cout << "Welcome to THE GOOD LOOKING ADVENTURERS: REVENGE OF THE BULLYWUG\n";
 	std::cout << "A Text Based adventure game based off true events\n";
 	std::cout << "Rated M for Mature\n";
-	std::cout << "For commands type 'help' or type 'QUIT' to exit\n ";
-
-	std::cout << "\n";
-
+	std::cout << "For commands type 'help' or type 'QUIT' to exit\n\n";
 	std::cout << "As you approach the dark abandoned castle, the smell of whisky and frogs scortches your nostrils\n";
-	std::cout << "With only a empty satchel on your back, you pry open the front door and enter the first room\n";
-	std::cout << "\n";
+	std::cout << "With only a empty satchel on your back, you pry open the front door and enter the first room\n\n";
 
-	currentRoom = rooms[0];//starting point
+	currentRoom = rooms[0]; //starting point
 
 	//This holds the event loop which prompts the user with the action menu
 	PlayerOne->PlayerMenu(currentRoom, userInput);
