@@ -57,28 +57,25 @@ int main() {
 	Furniture* webs = new Furniture("webs");
 
 
-	//creataing the items that will be hidden in the furniture objects
+	//creating the items that will be hidden in the furniture objects
 	Item* sword = new Item("sword");
 	sword->ChangeWeapModifier(12);
 	Item* spear = new Item("spear");
-	spear->ChangeWeapModifier(7);
+	spear->ChangeWeapModifier(9);
 	Item* dagger = new Item("dagger");
-	dagger->ChangeWeapModifier(20);
+	dagger->ChangeWeapModifier(20); // Dagger does 20 damage for simplifying demo
 	Item* bible = new Item("bible");
 	bible->ChangeWeapModifier(0);
 	Item* rock = new Item("rock");
 	rock->ChangeWeapModifier(1);
-	Item* goldCoins = new Item("gold coins");
-	goldCoins->ChangeWeapModifier(0);
 	Item* BattleAxe = new Item("battleaxe");
 	BattleAxe->ChangeWeapModifier(10);
-	//adding in spellbook items & spells (BL 05/12)
 	Item* spellbook = new Item("spellbook"); 
 	spellbook->ChangeWeapModifier(0);
 	Item* Fireball = new Item("fireball");
 	Fireball->ChangeWeapModifier(6);
 	Item* Frostbolt = new Item("frostbolt");
-	Frostbolt->ChangeWeapModifier(6);
+	Frostbolt->ChangeWeapModifier(8);
 	Item* Lightning = new Item("lightning");
 	Lightning->ChangeWeapModifier(10);
 
@@ -100,7 +97,8 @@ int main() {
 	DwarfCheiftan* aDwarfCheiftan = new DwarfCheiftan("Dwarf Cheiftan", 14);
 	DwarfMage* aDwarfMage = new DwarfMage("Dwarf Mage", 10);
 
-	Dragon* RedDragon = new Dragon("Red Dragon", 30);
+	// Boss
+	Dragon* RedDragon = new Dragon("Red Dragon", 35);
 
 
 	//designing the map, and setting up the rooms
