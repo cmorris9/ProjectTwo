@@ -20,7 +20,7 @@ public:
 	//Adding item
 	void setRoomFurniture(Furniture* AddFurn);
 	void PrintFurniture();
-	void setItemsInFurn(Item* item2Add);
+	void setItemsInFurn(std::vector<Item*> item2Add);
 	void setVisibleItems(Item* item2Add);
 	void PrintRoomItems();
 	void PrintFurnitureItems(int x);
@@ -32,8 +32,6 @@ public:
 
 	void setRoomEnemies(GameCharacter* testEnemy);
 	std::vector<GameCharacter*> getRoomEnemies();
-
-
 
 
 private:

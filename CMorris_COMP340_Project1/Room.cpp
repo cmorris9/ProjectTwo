@@ -9,7 +9,6 @@
 Room::Room(std::string description)
 {
 	this->description = description;
-	this->VisibleItems = VisibleItems;
 }
 
 
@@ -81,10 +80,12 @@ Room* Room::getRoom(std::string direction) {
 	}
 }
 
-void Room::setItemsInFurn(Item* item2Add)
+void Room::setItemsInFurn(std::vector<Item*> items2Add)
 {
-	Furniture* test = this->RoomFurniture.back();
-	test->AddFurnItems(item2Add);
+	for (int i = 0; i < items2Add.size(); i++) {
+		this->RoomFurniture.at(i)->AddFurnItems(items2Add.at(i));
+	}
+
 }
 
 void Room::setVisibleItems(Item* item2Add)

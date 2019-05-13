@@ -22,9 +22,9 @@
 
 int main() {
 	std::vector<Item*> Satchel;
-	std::vector<Item*> Spellbook;
+	std::vector<Item*> book;
 
-	User* PlayerOne = new User("PlayerOne", 40, Satchel, Spellbook);
+	User* PlayerOne = new User("PlayerOne", 40, Satchel, book);
 	std::vector<Room*> rooms;
 	std::vector<Item*> Items;
 	Room* currentRoom = nullptr;
@@ -68,12 +68,12 @@ int main() {
 	bible->ChangeWeapModifier(0);
 	Item* rock = new Item("rock");
 	rock->ChangeWeapModifier(1);
-	Item* goldCoins = new Item("Gold Coins");
+	Item* goldCoins = new Item("gold coins");
 	goldCoins->ChangeWeapModifier(0);
-	Item* BattleAxe = new Item("BattleAxe");
+	Item* BattleAxe = new Item("battleaxe");
 	BattleAxe->ChangeWeapModifier(10);
 	//adding in spellbook items & spells (BL 05/12)
-	Item* spellbook = new Item("SpellBook"); 
+	Item* spellbook = new Item("spellbook"); 
 	spellbook->ChangeWeapModifier(0);
 	Item* Fireball = new Item("fireball");
 	Fireball->ChangeWeapModifier(6);
@@ -130,17 +130,27 @@ int main() {
 	rooms[7]->setRoomFurniture(webs);
 	
 	//place the items in the furniture
-	rooms[0]->setItemsInFurn(dagger);
-	rooms[1]->setItemsInFurn(spear);
-	rooms[1]->setItemsInFurn(spellbook); //BL (05/12)
-	rooms[2]->setItemsInFurn(bible);
-	rooms[2]->setItemsInFurn(rock);
-	rooms[3]->setItemsInFurn(BattleAxe);
-	rooms[3]->setItemsInFurn(sword);
-	rooms[3]->setItemsInFurn(dagger);
-	rooms[4]->setItemsInFurn(goldCoins);
-	rooms[6]->setItemsInFurn(sword);
-	rooms[7]->setItemsInFurn(BattleAxe);
+	std::vector<Item*> room0Items;
+	room0Items.push_back(dagger);
+	rooms[0]->setItemsInFurn(room0Items);
+	std::vector<Item*> room1Items;
+	room1Items.push_back(spear);
+	rooms[1]->setItemsInFurn(room1Items);
+	std::vector<Item*> room2Items;
+	room2Items.push_back(bible);
+	rooms[2]->setItemsInFurn(room2Items);
+	std::vector<Item*> room3Items;
+	room3Items.push_back(spellbook);
+	rooms[3]->setItemsInFurn(room3Items);
+	std::vector<Item*> room4Items;
+	room4Items.push_back(rock);
+	rooms[4]->setItemsInFurn(room4Items);
+	std::vector<Item*> room6Items;
+	room6Items.push_back(sword);
+	rooms[6]->setItemsInFurn(room6Items);
+	std::vector<Item*> room7Items;
+	room7Items.push_back(BattleAxe);
+	rooms[7]->setItemsInFurn(room7Items);
 
 	//set the enemies in the rooms
 	rooms[1]->setRoomEnemies(Bug);
@@ -161,7 +171,7 @@ int main() {
 	std::cout << "As you approach the dark abandoned castle, the smell of whisky and frogs scortches your nostrils\n";
 	std::cout << "With only a empty satchel on your back, you pry open the front door and enter the first room\n\n";
 
-	currentRoom = rooms[0]; //starting point
+	currentRoom = rooms[3]; //starting point
 
 	//This holds the event loop which prompts the user with the action menu
 	PlayerOne->PlayerMenu(currentRoom, userInput);

@@ -6,11 +6,6 @@
 #include <iostream>
 #include <cstdlib> 
 
-
-
-
-
-
 Combat::Combat(User* PlayerOne)
 {
 	this->PlayerOne = PlayerOne;
@@ -24,9 +19,9 @@ Combat::~Combat()
 void Combat::CombatCheck(Room* currentRoom, std::string userInput)
 {
 	std::vector<GameCharacter*> TestList = currentRoom->getRoomEnemies();
-	if (TestList.size() > 0)
+	if (TestList.size() > 0) {
 		StartFight(currentRoom, userInput);
-	
+	}
 }
 
 void Combat::StartFight(Room* currentRoom, std::string userInput)
@@ -40,7 +35,6 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 
 	while (PlayerOne->HitPoints > 0 && EnemyHP > 0)
 	{
-		
 		std::vector<std::string> Commands;
 		std::cout << "You are now fighting! Select what combat Action to use!\n";
 		std::getline(std::cin, userInput1);
@@ -124,8 +118,24 @@ void Combat::StartFight(Room* currentRoom, std::string userInput)
 			{
 				std::cout << "you begin to pummel the enemy with your bare hands ";
 				std::cout << " dealing out " + std::to_string(4);
+
+
 				std::cout << " damage!!!\n";
-				EnemyHP = EnemyHP - 2;
+				EnemyHP = EnemyHP - 20;
+				// Change this back to '4'
+
+
+
+
+
+
+
+
+
+
+
+
+
 				std::cout << "Rem. HP: " + std::to_string(EnemyHP);
 				std::cout << " \n";
 			}
